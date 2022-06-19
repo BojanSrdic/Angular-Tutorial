@@ -1,0 +1,28 @@
+<div>
+    <h1>Template Driven Form</h1>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+        <p>Username</p>
+        <input type="text" placeholder="Username" required name="username" ngModel #username="ngModel">
+        <div>
+            <small *ngIf="username.invalid && username.touched"> Username is required fiels!</small>
+        </div>
+
+        <p>Email</p>
+        <input type="text" placeholder="Email" required email name="email" ngModel #email="ngModel">
+        <div>
+            <small *ngIf="email.invalid && email.touched"> Email is required fiels!</small>
+        </div>
+
+        <p>Password</p>
+        <input type="password" placeholder="Password" required name="password" ngModel #password="ngModel">
+        <div>
+            <small *ngIf="password.invalid && password.touched"> Password is required fiels!</small>
+        </div>
+
+        <br>
+        <br>
+
+        <button [disabled]="form.invalid">Subscribe</button>
+    </form>
+</div>

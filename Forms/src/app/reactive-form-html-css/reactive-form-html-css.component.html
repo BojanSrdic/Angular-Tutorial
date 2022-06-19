@@ -1,0 +1,28 @@
+<div>
+    <h1>Reactive Form</h1>
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  
+      <p>Username</p>
+      <input type="text" placeholder="Username" formControlName="username">
+      <div>
+        <small *ngIf="reactiveForm.get('username').invalid && reactiveForm.get('username').touched">message</small>
+      </div>      
+  
+      <p>Email</p>
+      <input type="text" placeholder="Email" formControlName="email">
+      <div>
+        <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">message</small>
+      </div>     
+  
+      <p>Password</p>
+      <input type="password" placeholder="Password" formControlName="password">
+      <div>
+        <small *ngIf="reactiveForm.get('password').invalid && reactiveForm.get('password').touched">message</small>
+      </div>     
+  
+      <br>
+      <br>
+  
+      <button >Subscribe</button>
+    </form>
+  </div>
